@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    height: 100vh;
+    background-color: #282D35;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #21222A;
+    height: 90px;
+    padding: 30px 25px;
+}
+
+.nav--logo_text,
+.nav--title {
+    margin: 0;
+}
+
+.nav--logo_text {
+    margin-right: auto;
+    color: #61DAFB;
+    font-weight: 700;
+}
+
+nav>h4 {
+    color: #DEEBF8;
+    font-weight: 600;
+}
+
+nav>img {
+    height: 30px;
+    margin-right: 7px;
+}
+
+/* 
+Challenge: Place the gray react logo in the background
+
+Don't use an `img` element, but rather set it as the
+`background-image` of the `main` element.
+
+Hint: you'll need to use the following properties:
+- background-image
+- background-repeat
+- background-position
+
+(Or the shorthand `background` property with values for all
+those other properties)
+*/
+main {
+    padding: 57px 27px;
+    color: white;
+    background-image: url(../images/react-icon-large.png);
+    background-repeat: no-repeat;
+    background-position: right 75%;
+}
+
+.main--title {
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
+}
+
+.main--facts {
+    margin-top: 46px;
+    max-width: 400px;
+}
+
+.main--facts > li {
+    line-height: 19px;
+    padding-block: 10px;
+}
+
+/* Note that this sudo-element selector is not accepted by all browsers*/
+.main--facts > li::marker {
+    font-size: 1.4rem;
+    color: #61DAFB;
+}
