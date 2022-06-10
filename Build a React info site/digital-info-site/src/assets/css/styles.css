@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    height: 100vh;
+    background-color: #57837B;
+}
+
+.container {
+    /* Center the text (content) only */
+    text-align: center;
+    /* Align the children elements flexibly */
+    display: flex;
+    /* Horizontally flexible */
+    flex-direction: row;
+    /* Content is justified to the center */
+    justify-content: center;
+}
+
+.container .card {
+    /* padding: 25px 50px 25px 50px; */
+    background-color: #3A6351;
+    width: 35%;
+}
+
+.card {
+    border-radius: 20px;
+    /* none|h-offset v-offset blur spread color |inset|initial|inherit */
+    box-shadow: 10px 10px 10px #2F5D62;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card .img {
+    width: 50%;
+    height: auto;
+}
+
+.header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+nav {
+    background-color: #F1ECC3;
+}
+
+main {
+    color: #F1ECC3;
+}
+
+.main--name {
+    margin-bottom: 0px;
+    text-shadow: 5px 5px 5px #56776C;
+}
+
+.main--title {
+    margin-top: 5px;
+    padding-top: 0px;
+    font-weight: lighter;
+    color: #CAF7E3;
+}
+
+.main--website {
+    font-style: italic;
+}
+
+.main--email {
+    font-size: 18px;
+    /* h-shadow v-shadow blur-radius color|none|initial|inherit; */
+    text-shadow: 5px 5px 10px #AAAAAA;
+}
+
+.main--email:link,
+.main--email:visited {
+    background-color: #F1ECC3;
+    color: black;
+    padding: 10px 170px 10px 170px;
+    /* top-right-bottom-left */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.main--email:hover,
+.main--email:active {
+    background-color: #5E8B7E;
+}
+
+.main--section {
+    text-align: left;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-bottom: 0px;
+    font-size: 23px;
+    text-shadow: 5px 5px 5px #56776C;
+}
+
+.main--section--content {
+    text-align: left;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-weight: lighter;
+    color: #232323;
+}
+
+.footer {
+    margin-top: 70px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 60px;
+    text-decoration: none;
+    color: #4AA96C;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}

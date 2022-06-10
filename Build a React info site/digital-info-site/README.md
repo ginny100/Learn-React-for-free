@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Digital Info Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is my solo project as a part of the course. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+<p align="center">
+  <img src="./src/assets/images/app-demo.png" alt="App Demo" width=500>
+</p>
 
 ## Available Scripts
 
