@@ -4,7 +4,7 @@
 # Notes
 - The code in this lesson is just for syntax reference
 
-Quick start:
+## Quick start:
 
 ```
 $ yarn # npm install
