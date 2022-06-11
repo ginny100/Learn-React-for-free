@@ -1,7 +1,10 @@
-# Review - array.map()
-- Read the doc [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+# Mapping Components
+- Take a look at the ```App.js``` file to see how we can map components in React for shorter and cleaner code compared to way we wrote code in lesson 8.
 
-## Quick start:
+# Notes
+- The code in this lesson is just for syntax reference
+
+Quick start:
 
 ```
 $ yarn # npm install
