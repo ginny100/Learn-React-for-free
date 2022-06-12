@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    height: 100vh;
+    /* background-color: #57837B; */
+}
+
+nav {
+    background-color: #F55A5A;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav--icon {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.nav--title {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+
+.cards-list {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card--image {
+    width: 25%;
+    height: 350px;
+    border-radius: 10px;
+    /* background-position: bottom 50px right 100px; */
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: bottom;
+    background-size: cover;
+}
+
+.card--info {
+    padding-left: 50px;
+    width: 80%;
+}
+
+.card--location {
+    display: flex;
+    justify-content: left;
+}
+
+.card--country {
+    color: #2B283A;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 12px;
+    letter-spacing: 0.17em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 20px
+}
+
+.card--url {
+    color: #918E9B;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card--title {
+    color: #2B283A;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.card--date {
+    color: #2B283A;
+}
+
+.card--description {
+    color: #2B283A;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.card--icon {
+    font-size: 25px;
+    text-decoration: none;
+    color: #F55A5A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 400px) {
+    .card--image {
+        width: 50%;
+        height: 200px;
+    }
+
+    .card--info {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card--image {
+        width: 50%;
+    }
+
+    .card--info {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card--image {
+        width: 50%;
+    }
+
+    .card--info {
+        width: 50%;
+    }
+}
