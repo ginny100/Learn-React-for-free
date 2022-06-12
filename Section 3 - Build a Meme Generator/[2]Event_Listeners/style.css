@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > img {
+    width: 100%;
+    border-radius: 10px;
+    transition: filter .1s ease-in-out;
+}
+
+.container > img:hover {
+    filter: brightness(50%);
+}
+
+.container > button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+    border: 2px solid lightgray;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Karla', sans-serif;
+    font-size: 1.3rem;
+}

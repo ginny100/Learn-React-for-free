@@ -22,10 +22,20 @@ nav {
     margin: 0;
 }
 
+.nav--icon {
+   height: 39px;
+}
+
 .nav--logo_text {
     margin-right: auto;
     color: #61DAFB;
     font-weight: 700;
+    font-size: 39px;
+}
+
+.nav--title {
+    margin: 0;
+    font-size: 30px;
 }
 
 nav>h4 {
@@ -69,10 +79,11 @@ main {
 .main--facts {
     margin-top: 46px;
     max-width: 400px;
+    font-size: 20px;
 }
 
 .main--facts > li {
-    line-height: 19px;
+    /* line-height: 19px; */
     padding-block: 10px;
 }
 
