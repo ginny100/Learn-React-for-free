@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function App() {
-    /**
+    /*
      * Challenge: 
      * - Initialize state for `isGoingOut` as a boolean
      * - Make it so clicking the div.state--value flips that
