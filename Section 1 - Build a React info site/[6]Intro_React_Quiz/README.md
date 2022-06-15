@@ -1,4 +1,5 @@
-# Quiz 1
+# Intro React Quiz
+
 1. Why do we need to `import React from "react"` in our files?
 React is what defines JSX
 

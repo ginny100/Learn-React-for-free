@@ -1,4 +1,5 @@
-# Quiz 2
+# React Component Quiz
+
 1. What is a React component?
 A function that returns React elements. (UI)
 

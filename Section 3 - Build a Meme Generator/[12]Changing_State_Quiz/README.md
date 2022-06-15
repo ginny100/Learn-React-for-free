@@ -1,3 +1,5 @@
+# Changing State Quiz
+
 1. You have 2 options for what you can pass in to a `state setter` function (e.g. `setCount`). What are they?
 - a. New value of state (Ex. setCount(42))
 - b. Callback function - whatever the callback function returns === new value of state

@@ -1,3 +1,5 @@
+# Map Quiz
+
 1. What does the `.map()` array method do?
 - (JavaScript) Returns a new array. Whatever gets returned from the callback
 function provided is placed at the same index in the new array. Usually we take the items from the original array and modify them
