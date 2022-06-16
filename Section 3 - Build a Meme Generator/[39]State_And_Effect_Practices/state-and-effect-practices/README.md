@@ -1,13 +1,6 @@
 # Getting Started with Create React App
 
-A fun and simple meme generator bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-<p align="center">
-  <img src="./public/images/app-demo.png" alt="App Demo" width=500>
-</p>
-
-- Click on the `Get a new meme image` button to get a random image
-- Then enter any text you can think of in the `Top text` and `Bottom text` boxes to generate your own meme
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
