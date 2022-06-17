@@ -3,6 +3,13 @@
 Imagine you've been handed this code base which includes all the design elements for a light and dark mode already,
 but the team needs you to add the functionality to it so it can switch from light to dark mode when the toggle is flipped.
 
+<table>
+  <tr>
+    <td><img src="src/images/app-demo-light.png" width=500></td>
+    <td><img src="src/images/app-demo-dark.png" width=500></td>
+  </tr>
+ </table>
+
 ## Advice:
 1. Spend a good amount of time looking through the existing code base to make sure you understand how everything is working
     a. Check the markup starting in index.js -> App.js -> Main.js and Navbar.js
