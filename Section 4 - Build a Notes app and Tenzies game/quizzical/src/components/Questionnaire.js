@@ -1,19 +1,16 @@
 import React from "react"
 import QuestionItem from "./QuestionItem"
-import Score from "./Score"
-import PlayAgain from "./PlayAgain"
-import CheckAnswers from "./CheckAnswers"
 
 export default function Questionnaire() {
     const [token, setToken] = React.useState("")
     const [questionnaire, setQuestionnaire] = React.useState([])
-    const [hasFinished, setHasFinished] = React.useState(false)
+    const [endGame, setEndGame] = React.useState(false)
 
     // A new session token is generated every time the user starts the game
     React.useEffect(() => {
         getToken()
     }, [])
-    console.log(token)
+    // console.log(token)
 
     // Generate a new questionnaire of 10 questions with the current session token
     React.useEffect(() => {
@@ -28,7 +25,7 @@ export default function Questionnaire() {
         }
         getQuestionnaire()
     }, [])
-    console.log(questionnaire)
+    // console.log(questionnaire)
 
     async function getToken() {
         const res = await fetch("https://opentdb.com/api_token.php?command=request")
@@ -37,34 +34,63 @@ export default function Questionnaire() {
     }
 
     const questionItems = questionnaire.map((item, index) => {
-        const incorrectAnswers = item.incorrect_answers
-        var allAnswers = incorrectAnswers.concat(item.correct_answer)
+        const allAnswers = item.incorrect_answers
+        allAnswers.push(item.correct_answer)
+
+        // console.log('New item:')
+        // console.log(item)
+        // console.log(item.correct_answer)
+        // console.log(item.incorrect_answers)
+        // console.log(allAnswers)
 
         function shuffle(array) {
             array.sort(() => Math.random() - 0.5);
         }
 
         shuffle(allAnswers)
+        console.log(allAnswers);
 
         return (
             <QuestionItem
                 key={index}
                 question={item.question}
                 answers={allAnswers}
+                correctAnswer={item.correct_answer}
+                endGame={endGame}
             />
         )
     })
 
+    function checkAnswers() {
+        setEndGame(true)
+    }
+
     return (
         <div className="questionnaire">
             {questionItems}
-            <div className="quiz-ongoing">
-                <CheckAnswers />
-            </div>
-            {/* <div className="quiz-complete">
-                <Score />
-                <PlayAgain />
-            </div> */}
+            {
+                endGame
+                    ?
+                    <div className="quiz-complete">
+                        {/* <h3>You scored {score}/10 correct answers</h3> */}
+                        <h3>You scored 10/10 correct answers</h3>
+                        <button
+                            className="questionnaire-button"
+                        // onClick={checkAnswers}
+                        >
+                            Play again
+                        </button>
+                    </div>
+                    :
+                    <div className="quiz-ongoing">
+                        <button
+                            className="questionnaire-button"
+                            onClick={checkAnswers}
+                        >
+                            Check answers
+                        </button>
+                    </div>
+            }
         </div>
     )
 }
