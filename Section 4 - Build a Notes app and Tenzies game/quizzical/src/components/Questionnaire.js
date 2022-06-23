@@ -5,6 +5,8 @@ export default function Questionnaire() {
     const [token, setToken] = React.useState("")
     const [questionnaire, setQuestionnaire] = React.useState([])
     const [endGame, setEndGame] = React.useState(false)
+    const [itemPoints, setItemPoints] = React.useState(Array(10).fill(0)) // items = [0,0,0,0,0,0,0,0,0,0]
+    const [score, setScore] = React.useState(0)
 
     // A new session token is generated every time the user starts the game
     React.useEffect(() => {
@@ -12,17 +14,22 @@ export default function Questionnaire() {
     }, [])
     // console.log(token)
 
+    async function getQuestionnaire() {
+        let res = await fetch("https://opentdb.com/api.php?amount=10&type=multiple&token=" + token)
+        let data = await res.json()
+        // When the session token has expired -> generate a new one
+        if (data.response_code === 4) {
+            res = await fetch("https://opentdb.com/api.php?amount=10&type=multiple&token=" + await getToken())
+            data = await res.json()
+        }
+        setQuestionnaire(data.results)
+        setEndGame(false)
+        setItemPoints(Array(10).fill(0))
+        setScore(0)
+    }
+
     // Generate a new questionnaire of 10 questions with the current session token
     React.useEffect(() => {
-        async function getQuestionnaire() {
-            const res = await fetch("https://opentdb.com/api.php?amount=10&type=multiple&token=" + token)
-            const data = await res.json()
-            // When the session token has expired -> generate a new one
-            if (data.response_code === 4) {
-                getToken()
-            }
-            setQuestionnaire(data.results)
-        }
         getQuestionnaire()
     }, [])
     // console.log(questionnaire)
@@ -31,6 +38,7 @@ export default function Questionnaire() {
         const res = await fetch("https://opentdb.com/api_token.php?command=request")
         const data = await res.json()
         setToken(data.token)
+        return data.token
     }
 
     const questionItems = questionnaire.map((item, index) => {
@@ -48,7 +56,7 @@ export default function Questionnaire() {
         }
 
         shuffle(allAnswers)
-        console.log(allAnswers);
+        // console.log(allAnswers);
 
         return (
             <QuestionItem
@@ -57,12 +65,36 @@ export default function Questionnaire() {
                 answers={allAnswers}
                 correctAnswer={item.correct_answer}
                 endGame={endGame}
+                point={(newPoint) => { updatePoint(index, newPoint) }}
             />
         )
     })
 
+    // console.log(questionItems)
+
     function checkAnswers() {
         setEndGame(true)
+        calcScore()
+    }
+
+    // Passed to the child component
+    function updatePoint(id, newPoint) {
+        console.log('id')
+        console.log(id)
+        console.log('newPoint')
+        console.log(newPoint)
+        setItemPoints((prevItemPoints) => {
+            // return [...prevItemPoints, prevItemPoints[id] = newPoint]
+            let newItemPoints = [...prevItemPoints]
+            newItemPoints[id] = newPoint
+            return newItemPoints
+        })
+    }
+
+    function calcScore() {
+        console.log(itemPoints)
+        setScore(itemPoints.reduce((a, b) => a + b, 0))
+        console.log(score)
     }
 
     return (
@@ -72,11 +104,10 @@ export default function Questionnaire() {
                 endGame
                     ?
                     <div className="quiz-complete">
-                        {/* <h3>You scored {score}/10 correct answers</h3> */}
-                        <h3>You scored 10/10 correct answers</h3>
+                        <h3>You scored {score}/10 correct answers</h3>
                         <button
                             className="questionnaire-button"
-                        // onClick={checkAnswers}
+                            onClick={getQuestionnaire}
                         >
                             Play again
                         </button>
