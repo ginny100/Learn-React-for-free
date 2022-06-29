@@ -81,7 +81,7 @@ export default function QuestionItem(props) {
 
     return (
         <div>
-            <h3>{props.question}</h3>
+            <h3 dangerouslySetInnerHTML={{__html: props.question }}></h3>
             {options}
             <hr />
         </div>

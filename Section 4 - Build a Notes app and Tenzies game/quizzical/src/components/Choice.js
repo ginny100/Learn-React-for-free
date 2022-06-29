@@ -64,8 +64,8 @@ export default function Choice(props) {
             className="choice"
             style={styles}
             onClick={() => { if (!props.endGame) { props.choose() } }}
+            dangerouslySetInnerHTML={{ __html: props.value }}
         >
-            {props.value}
         </button>
     )
 }
