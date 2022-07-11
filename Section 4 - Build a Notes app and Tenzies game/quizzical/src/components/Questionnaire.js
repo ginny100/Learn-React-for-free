@@ -80,8 +80,8 @@ export default function Questionnaire() {
         )
     })
 
-    console.log(questionItems);
-    console.log(questionnaire);
+    // console.log(questionItems);
+    // console.log(questionnaire);
 
     function checkAnswers() {
         setEndGame(true)
