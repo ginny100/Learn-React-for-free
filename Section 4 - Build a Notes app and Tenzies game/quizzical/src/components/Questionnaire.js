@@ -55,11 +55,11 @@ export default function Questionnaire() {
         const allAnswers = [...item.incorrect_answers];
         allAnswers.push(item.correct_answer)
 
-        console.log('New item:')
-        console.log(item)
-        console.log(item.correct_answer)
-        console.log(item.incorrect_answers)
-        console.log(allAnswers)
+        // console.log('New item:')
+        // console.log(item)
+        // console.log(item.correct_answer)
+        // console.log(item.incorrect_answers)
+        // console.log(allAnswers)
 
         function shuffle(array) {
             array.sort(() => Math.random() - 0.5);
